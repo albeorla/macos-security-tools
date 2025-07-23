@@ -1,0 +1,44 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+/var/log/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Security reports (contain sensitive data)
+/var/log/macos-security/
+/var/log/macos-threat-monitor/
+/var/log/macos-compromise-detection/
+/var/log/macos-soc/
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Test output
+test-results/
+coverage/ 
