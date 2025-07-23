@@ -1,0 +1,61 @@
+[package]
+name = "macos-security-tools"
+version = "0.2.0"
+edition = "2021"
+authors = ["albeorla"]
+description = "Enterprise-grade macOS security suite"
+license = "MIT"
+
+[dependencies]
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# CLI and logging
+clap = { version = "4.0", features = ["derive"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+colored = "2.0"
+
+# Additional utilities
+glob = "0.3"
+hostname = "0.3"
+chrono = "0.4"
+
+# System interaction
+sysinfo = "0.30"
+nix = { version = "0.27", features = ["process", "signal", "fs"] }
+libc = "0.2"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Network monitoring  
+pnet = "0.34"
+
+# macOS specific
+core-foundation = "0.9"
+system-configuration = "0.5"
+
+# Security
+sha2 = "0.10"
+base64 = "0.21"
+
+[dev-dependencies]
+tempfile = "3.0"
+mockall = "0.12"
+
+[[bin]]
+name = "macos-security"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+opt-level = 3 
